@@ -1,14 +1,5 @@
-本实验将实现如下功能：通过ADC1读取通道5（PA5）上面的电压（对应多功能端口的ADC），在LCD模块上面显示ADC转换值以及换算成电压后的电压值。
-
-注意：本实验的参考电压是3.3V，如果你想用其他的参考电压，可以通过探索者STM32F4开发板的P7端口设置。注意设置好其他参考电压以后，输入电压不要超过参考电压的最大值！！
-
-
-
-               	正点原子@ALIENTEK
-               	2014-10-25
-		广州市星翼电子科技有限公司
-                电话：020-38271790
-                传真：020-36773971
-	       	购买：http://shop62057469.taobao.com
-                公司网站：www.alientek.com
-         	技术论坛：www.openedv.com
+This project is used to get temperature, humidity and light intense data from BH1750, ADC and DHT11. 
+Data send and receive protocol:
+1.get 'D' from USART, send 11 int data. the first three data is the data initial iditification prefix : 0x10,'d',':'. The last data is the data end iditification prefix : '\0'
+2.get 'O' from USART, stm32 board will control the light to turn it on.
+3.get 'S' from USART, stm32 board will control the light to turn it off.
