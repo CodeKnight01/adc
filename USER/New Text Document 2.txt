@@ -1,0 +1,2 @@
+fromelf --bin !L --output main.bin.temp
+@File2Bin.exe 0x01 1 00 .\main.bin.temp .\main.bin
